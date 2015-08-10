@@ -18,9 +18,9 @@ var Game = function (guess, color, age, attempt, pet, guess2, answer, name, gues
     this.runColor();
     this.runAge();
     this.runPet();
-    this.runMath();
     this.runName();
     this.runTeam();
+    this.runMath();
   }
 }
   var checkAnswer = new Game ('What\'s my favorite color?',
@@ -35,6 +35,8 @@ var Game = function (guess, color, age, attempt, pet, guess2, answer, name, gues
                               'Seahawks',
                               'What is my favorite professional sports team?')
 
+document.getElementById("colorhints").innerHTML = "It's a primary color."
+
 
 Game.prototype.runColor = function(){
   var asd = prompt(this.guess);
@@ -46,6 +48,7 @@ Game.prototype.runColor = function(){
     }
 };
 
+document.getElementById('agehints').innerHTML = 'Between 25 and 30.';
 
 Game.prototype.runAge = function(){
   var asd = prompt(this.attempt);
@@ -56,6 +59,8 @@ Game.prototype.runAge = function(){
       alert('Oh so close.');
     }
 };
+
+document.getElementById('pethints').innerHTML = "Two dogs and one cat."
 
 Game.prototype.runPet = function(){
   var asd = prompt(this.guess2);
@@ -75,12 +80,11 @@ Game.prototype.runMath = function(){
 
     console.log(rand);
 
-     giveHint(asd, rand);
-
     if(asd == rand) {
       alert('You are amazing!');
     this.playing = false;
     } else {
+      giveHint(asd, rand);
       alert('That\'s ok, just try again.');
     }
   }
@@ -93,13 +97,17 @@ var mathhints = document.getElementById('mathhints');
 var hint = document.createElement('p');
 console.dir(mathhints);
 console.log(a,r);
+
   if(a > r){
-      hint.innerHtml = 'Think smaller';
-  } else {
-      hint.innerHtml = 'Think bigger';
+      hint.innerHTML = 'Think smaller';
+      mathhints.appendChild(hint);
+    } else {
+      hint.innerHTML = 'Think bigger';
+      mathhints.appendChild(hint);
   }
-  mathhints.appendChild(hint);
 }
+
+document.getElementById('namehints').innerHTML = 'It\'s a three letter word.'
 
 Game.prototype.runName = function(){
   var asd = prompt(this.guess4);
@@ -110,6 +118,8 @@ Game.prototype.runName = function(){
       alert('You almost got it!');
     }
 };
+
+document.getElementById('teamhints').innerHTML = 'Does Seattle ring a bell?'
 
 Game.prototype.runTeam = function(){
   var asd = prompt(this.guess5);
@@ -122,7 +132,3 @@ Game.prototype.runTeam = function(){
 };
 
 checkAnswer.startGame()
-//var y = document.createElement('div');
-//y.innerHtml = 'How anoying';
-//var x = document.getElementById('mathhints');
-//x.innerHtml = 'T
