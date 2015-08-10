@@ -35,7 +35,7 @@ var Game = function (guess, color, age, attempt, pet, guess2, answer, name, gues
                               'Seahawks',
                               'What is my favorite professional sports team?')
 
-document.getElementById("colorhints").innerHTML = "It's a primary color."
+document.getElementById('colorhints').innerHTML = 'It\'s a primary color.';
 
 
 Game.prototype.runColor = function(){
@@ -60,7 +60,7 @@ Game.prototype.runAge = function(){
     }
 };
 
-document.getElementById('pethints').innerHTML = "Two dogs and one cat."
+document.getElementById('pethints').innerHTML = 'Two dogs and one cat.';
 
 Game.prototype.runPet = function(){
   var asd = prompt(this.guess2);
@@ -107,7 +107,7 @@ console.log(a,r);
   }
 }
 
-document.getElementById('namehints').innerHTML = 'It\'s a three letter word.'
+document.getElementById('namehints').innerHTML = 'It\'s a three letter word.';
 
 Game.prototype.runName = function(){
   var asd = prompt(this.guess4);
@@ -119,7 +119,7 @@ Game.prototype.runName = function(){
     }
 };
 
-document.getElementById('teamhints').innerHTML = 'Does Seattle ring a bell?'
+document.getElementById('teamhints').innerHTML = 'Does Seattle ring a bell?';
 
 Game.prototype.runTeam = function(){
   var asd = prompt(this.guess5);
